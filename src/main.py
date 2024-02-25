@@ -7,11 +7,11 @@ if __name__ == '__main__':
     app = App()
     llm = LLM()
 
-    loader = CSVLoader(file_path='/Users/praneeth/Documents/ml/marketing-chatbot/data/pricing.csv',
+    loader = CSVLoader(file_path='C:/Users/sinis/Documents/code/sales-chatbot/data/Customer-Support.csv',
                        encoding="utf-8", 
                        csv_args={'delimiter': ','})
     data = loader.load()
-    print(f'data: {data}')
+    # print(f'data: {data}')
 
     conversation_retrieval_chain = llm.init_conversation_retrieval_chain(data)
     conversation_chain = llm.init_conversation_chain()
@@ -27,6 +27,7 @@ if __name__ == '__main__':
                                               return_only_outputs=True)
 
         print(f'conversation_retrieval_chain output: {output}')
+        print(f"Model\'s reponse: {output['answer']}")
         app.set_generated_message_state(output['answer'])
         app.set_history(input, output['answer'])
 

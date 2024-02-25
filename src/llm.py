@@ -23,7 +23,7 @@ class LLM:
     def __init__(self) -> None:
         # self.huggingface_repo_id = 'decapoda-research/llama-7b-hf' # model keeps timing out
         # self.huggingface_repo_id = 'mosaicml/mpt-7b-chat' # model times out
-        self.huggingface_repo_id = 'bigscience/bloom' # works
+        self.huggingface_repo_id = 'tiiuae/falcon-7b' # works
 
         self.huggingface_api_token = getenv('HUGGINGFACEHUB_API_TOKEN')
 

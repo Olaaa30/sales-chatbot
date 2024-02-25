@@ -5,7 +5,7 @@ from streamlit_chat import message
 class App():
     def __init__(self) -> None:
         self.chat_context = ""
-        self.dashboard_title = 'Bundle Purchase Helper Bot'
+        self.dashboard_title = 'Salesrep Bot'
         st.title(self.dashboard_title)
 
         if 'generated' not in st.session_state:
@@ -37,7 +37,7 @@ class App():
                     return st.session_state['user_input']
 
     def set_generated_message_state(self, generated_text: str) -> None:
-        st.session_state.generated.append(generated_text)
+        st.session_state.generated.insert(0, generated_text)
 
     def create_chat_component(self) -> None:
         if st.session_state['generated']:
