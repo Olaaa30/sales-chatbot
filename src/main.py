@@ -7,7 +7,7 @@ if __name__ == '__main__':
     app = App()
     llm = LLM()
 
-    loader = CSVLoader(file_path='C:/Users/sinis/Documents/code/sales-chatbot/data/Customer-Support.csv',
+    loader = CSVLoader(file_path='/mount/src/sales-chatbot/data/Customer-Support.csv',
                        encoding="utf-8", 
                        csv_args={'delimiter': ','})
     data = loader.load()
